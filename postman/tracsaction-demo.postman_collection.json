@@ -1,0 +1,433 @@
+{
+	"info": {
+		"_postman_id": "24750704-ed77-4e6e-94c6-47e2a9679686",
+		"name": "tracsaction-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api/v1",
+			"item": [
+				{
+					"name": "create-transactions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"accountNumber\": \"6H9WHS37ZDAOJLXH5NO\",\n  \"transactionType\": \"DEPOSIT\",\n  \"amount\": 1000.00,\n  \"description\": \"string\",\n  \"recipientAccount\": \"string\",\n  \"recipientAccountValid\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-transactions",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"accountNumber\": \"6H9WHS37ZDAOJLXH5NO\",\n  \"transactionType\": \"DEPOSIT\",\n  \"amount\": 2000.00,\n  \"description\": \"string\",\n  \"recipientAccount\": \"string\",\n  \"recipientAccountValid\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions/1d748097-3fe3-4b66-8544-a90874d118bd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"1d748097-3fe3-4b66-8544-a90874d118bd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-transactions-by-account",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions/account/6H9WHS37ZDAOJLXH5NO?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"account",
+								"6H9WHS37ZDAOJLXH5NO"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/transactions/statistics",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions/statistics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"statistics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-transactions-by-type",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions/type/DEPOSIT?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"type",
+								"DEPOSIT"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-transactions-page",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-transactions-by-id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions/1d748097-3fe3-4b66-8544-a90874d118bd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"1d748097-3fe3-4b66-8544-a90874d118bd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-transactions-by-id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions/550e8400-e29b-41d4-a716-446655440000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"550e8400-e29b-41d4-a716-446655440000"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api/v2",
+			"item": [
+				{
+					"name": "create-transactions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"accountNumber\": \"OSPRBAZQ02\",\n  \"transactionType\": \"WITHDRAWAL\",\n  \"amount\": 3999.99,\n  \"description\": \"string\",\n  \"recipientAccount\": \"string\",\n  \"recipientAccountValid\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v2/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-transactions",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"accountNumber\": \"OSPRBAZQ02\",\n  \"transactionType\": \"DEPOSIT\",\n  \"amount\": 4999.99,\n  \"description\": \"string\",\n  \"recipientAccount\": \"string\",\n  \"recipientAccountValid\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v2/transactions/7ec0a2d8-e89c-46bb-88bb-bfff45e3f83e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"transactions",
+								"7ec0a2d8-e89c-46bb-88bb-bfff45e3f83e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-transactions-by-account",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/transactions/account/OSPRBAZQ02?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"transactions",
+								"account",
+								"OSPRBAZQ02"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-transactions-by-accountNumber-type-page",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/transactions/search?page=0&size=10&accountNumber=OSPRBAZQ02&type=DEPOSIT",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"transactions",
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "accountNumber",
+									"value": "OSPRBAZQ02"
+								},
+								{
+									"key": "type",
+									"value": "DEPOSIT"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
