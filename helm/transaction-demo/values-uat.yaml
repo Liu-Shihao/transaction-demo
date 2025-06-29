@@ -27,12 +27,9 @@ ingress:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
-  hosts:
-    - host: transaction-demo-uat.example.com
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
+  host: transaction-demo-uat.lsh.com
   tls: []
+  tlsSecret: ""
 
 resources:
   limits:

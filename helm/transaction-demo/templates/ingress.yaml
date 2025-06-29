@@ -21,7 +21,7 @@ spec:
                 name: {{ include "transaction-demo.fullname" . }}
                 port:
                   number: {{ .Values.service.port }}
-  {{- if .Values.ingress.tls }}
+  {{- if and .Values.ingress.tls .Values.ingress.tlsSecret }}
   tls:
     - hosts:
         - {{ .Values.ingress.host }}

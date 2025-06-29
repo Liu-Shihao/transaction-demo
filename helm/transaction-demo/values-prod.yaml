@@ -33,15 +33,9 @@ ingress:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/rate-limit: "100"
     nginx.ingress.kubernetes.io/rate-limit-window: "1m"
-  hosts:
-    - host: transaction-demo.example.com
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
-  tls:
-    - secretName: transaction-demo-prod-tls
-      hosts:
-        - transaction-demo.example.com
+  host: transaction-demo.lsh.com
+  tls: true
+  tlsSecret: transaction-demo-prod-tls
 
 # Production resource limits and requests
 resources:

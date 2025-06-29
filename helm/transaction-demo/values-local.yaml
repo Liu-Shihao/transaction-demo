@@ -25,12 +25,9 @@ ingress:
   enabled: false
   className: ""
   annotations: {}
-  hosts:
-    - host: transaction-demo-local.local
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
+  host: transaction-demo-local.local
   tls: []
+  tlsSecret: ""
 
 resources:
   limits:
