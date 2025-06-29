@@ -7,7 +7,7 @@ server:
 # Logging configuration for COB environment
 logging:
   level:
-    com.banking.transaction: INFO
+    com.lsh.transaction: INFO
     org.springframework.cache: WARN
     org.springframework.web: WARN
     root: WARN

@@ -7,7 +7,7 @@ server:
 # Logging configuration for local development
 logging:
   level:
-    com.banking.transaction: DEBUG
+    com.lsh.transaction: DEBUG
     org.springframework.cache: DEBUG
     org.springframework.web: DEBUG
     org.springframework.security: DEBUG

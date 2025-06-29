@@ -35,7 +35,7 @@ server:
 # Minimal logging for maximum performance
 logging:
   level:
-    com.banking.transaction: INFO  # Reduced logging
+    com.lsh.transaction: INFO  # Reduced logging
     org.springframework.cache: INFO
     org.springframework.web: INFO
     root: INFO

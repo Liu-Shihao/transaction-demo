@@ -7,7 +7,7 @@ server:
 # Logging configuration for production environment
 logging:
   level:
-    com.banking.transaction: WARN
+    com.lsh.transaction: WARN
     org.springframework.cache: ERROR
     org.springframework.web: ERROR
     root: ERROR
