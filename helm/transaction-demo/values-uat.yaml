@@ -1,0 +1,69 @@
+# UAT environment values
+replicaCount: 2
+
+image:
+  repository: transaction-demo
+  tag: uat
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  hosts:
+    - host: transaction-demo-uat.example.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+resources:
+  limits:
+    cpu: 1500m
+    memory: 3Gi
+  requests:
+    cpu: 750m
+    memory: 1.5Gi
+
+env:
+  JAVA_OPTS: "-Xms1.5g -Xmx1.5g -XX:+UseG1GC -Xlog:gc*:/tmp/gc-uat.log:time,uptime,level,tags -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/heapdump.hprof"
+  SPRING_PROFILES_ACTIVE: "uat"
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 65
+  targetMemoryUtilizationPercentage: 65
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# UAT specific configurations
+config:
+  logging:
+    level: INFO
+  cache:
+    ttl: 180
+  debug:
+    enabled: false 

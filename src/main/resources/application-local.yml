@@ -1,0 +1,65 @@
+# Local development environment configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# Logging configuration for local development
+logging:
+  level:
+    com.banking.transaction: DEBUG
+    org.springframework.cache: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+# Local specific settings
+app:
+  transaction:
+    cache:
+      ttl: 30 # 30 seconds for immediate feedback
+    debug:
+      enabled: true
+      show-sql: true
+      show-parameters: true
+
+# SpringDoc configuration for local development
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+    doc-expansion: list
+  api-docs:
+    enabled: true
+
+# Actuator configuration for local development
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    info:
+      enabled: true
+    env:
+      enabled: true
+    configprops:
+      enabled: true
+
+# Tomcat thread pool configuration for maximum performance
+tomcat:
+  threads:
+    max: 1500          # Increased from 800 to 1500 for higher concurrency
+    min-spare: 200     # Increased from 100 to 200 for better responsiveness
+  max-connections: 16384  # Increased from 8192 to 16384
+  accept-count: 200    # Increased from 100 to 200
+  connection-timeout: 10000  # Reduced from 20000 to 10000 for faster processing
+  keep-alive-timeout: 30000  # Reduced from 60000 to 30000
+  max-keep-alive-requests: 200  # Increased from 100 to 200 

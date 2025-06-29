@@ -1,0 +1,46 @@
+# COB (Close of Business) environment configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# Logging configuration for COB environment
+logging:
+  level:
+    com.banking.transaction: INFO
+    org.springframework.cache: WARN
+    org.springframework.web: WARN
+    root: WARN
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# COB specific settings
+app:
+  transaction:
+    cache:
+      ttl: 600 # 10 minutes for COB processing
+    debug:
+      enabled: false
+      show-sql: false
+
+# SpringDoc configuration for COB environment
+springdoc:
+  swagger-ui:
+    enabled: false # Disable Swagger UI in COB
+    path: /swagger-ui.html
+  api-docs:
+    enabled: false # Disable API docs in COB
+
+# Actuator configuration for COB environment
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: when-authorized
+    info:
+      enabled: true
+    prometheus:
+      enabled: true 

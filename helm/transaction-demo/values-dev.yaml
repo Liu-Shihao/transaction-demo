@@ -1,0 +1,67 @@
+# Development environment values
+replicaCount: 1
+
+image:
+  repository: transaction-demo
+  tag: dev
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: transaction-demo-dev.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 1Gi
+  requests:
+    cpu: 200m
+    memory: 512Mi
+
+env:
+  JAVA_OPTS: "-Xms512m -Xmx512m -XX:+UseG1GC -Xlog:gc*:/tmp/gc-dev.log:time,uptime,level,tags -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/heapdump.hprof"
+  SPRING_PROFILES_ACTIVE: "dev"
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# Development specific configurations
+config:
+  logging:
+    level: DEBUG
+  cache:
+    ttl: 60
+  debug:
+    enabled: true 

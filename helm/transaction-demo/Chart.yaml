@@ -1,0 +1,14 @@
+apiVersion: v2
+name: transaction-demo
+description: A Helm chart for the Transaction Management System
+version: 0.1.0
+appVersion: "1.0.0"
+keywords:
+  - springboot
+  - transaction
+  - banking
+  - java
+  - demo
+maintainers:
+  - name: JoeyLiu
+    email: liush99@foxmail.com

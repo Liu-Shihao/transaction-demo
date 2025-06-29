@@ -1,0 +1,49 @@
+# UAT (User Acceptance Testing) environment configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# Logging configuration for UAT environment
+logging:
+  level:
+    com.banking.transaction: INFO
+    org.springframework.cache: WARN
+    org.springframework.web: WARN
+    root: WARN
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# UAT specific settings
+app:
+  transaction:
+    cache:
+      ttl: 180 # 3 minutes for UAT testing
+    debug:
+      enabled: false
+      show-sql: false
+
+# SpringDoc configuration for UAT environment
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+    doc-expansion: none
+  api-docs:
+    enabled: true
+
+# Actuator configuration for UAT environment
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: when-authorized
+    info:
+      enabled: true
+    prometheus:
+      enabled: true 

@@ -1,0 +1,61 @@
+# Common configuration for all environments
+spring:
+  application:
+    name: transaction-demo
+  
+  # Jackson configuration for JSON processing
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
+  
+  # Validation configuration
+  validation:
+    enabled: true
+
+# Actuator configuration for monitoring
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      simple:
+        enabled: true
+
+# SpringDoc OpenAPI configuration
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+    doc-expansion: none
+  default-produces-media-type: application/json
+  default-consumes-media-type: application/json
+
+# Application specific configuration
+app:
+  transaction:
+    max-page-size: 1000
+    default-page-size: 10
+    cache:
+      ttl: 300 # 5 minutes in seconds
+
+# Environment specific configuration will be loaded from application-{profile}.yml
+
+# Logging configuration
+logging:
+  level:
+    com.banking.transaction: DEBUG
+    org.springframework.cache: DEBUG
+    org.springframework.web: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n" 

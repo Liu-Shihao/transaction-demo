@@ -1,0 +1,47 @@
+# Development environment configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# Logging configuration for development
+logging:
+  level:
+    com.banking.transaction: DEBUG
+    org.springframework.cache: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+# Development specific settings
+app:
+  transaction:
+    cache:
+      ttl: 60 # 1 minute for faster development feedback
+    debug:
+      enabled: true
+      show-sql: true
+
+# SpringDoc configuration for development
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+    doc-expansion: none
+  api-docs:
+    enabled: true
+
+# Actuator configuration for development
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    info:
+      enabled: true 

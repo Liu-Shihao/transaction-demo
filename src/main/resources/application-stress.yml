@@ -1,0 +1,81 @@
+# Ultra High Performance Tomcat Configuration
+# Optimized for maximum concurrency on your system
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+  
+  # Ultra high-performance Tomcat configuration
+  tomcat:
+    threads:
+      max: 1500         # Maximum threads (close to theoretical limit)
+      min-spare: 800    # 10% of max threads
+    max-connections: 50000  # Close to file descriptor limit
+    accept-count: 2000   # Large connection queue
+    connection-timeout: 30000  # Connection timeout
+    keep-alive-timeout: 120000  # Keep-alive timeout
+    max-keep-alive-requests: 200  # Max requests per connection
+    # Performance optimizations
+    processor-cache: 800  # Optimized for high concurrency
+    tcp-no-delay: true   # TCP_NODELAY
+    so-keep-alive: true  # SO_KEEPALIVE
+    # Additional ultra-performance optimizations
+    max-http-form-post-size: 2MB
+    max-swallow-size: 2MB
+    # Disable unnecessary features
+    enable-mbeans: false
+    background-processor-delay: 10
+    # Advanced performance settings
+    socket-buffer: 9000  # Socket buffer size
+    socket-app-read-buf-size: 8192  # Application read buffer
+    socket-rx-buf-size: 25188  # Receive buffer size
+    socket-tx-buf-size: 43800  # Transmit buffer size
+
+# Minimal logging for maximum performance
+logging:
+  level:
+    com.banking.transaction: INFO  # Reduced logging
+    org.springframework.cache: INFO
+    org.springframework.web: INFO
+    root: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# Ultra performance settings
+app:
+  transaction:
+    cache:
+      ttl: 300 # 5 minutes for stress testing
+    debug:
+      enabled: false
+      show-sql: false
+
+# Disable all non-essential features for maximum performance
+springdoc:
+  swagger-ui:
+    enabled: false
+  api-docs:
+    enabled: false
+
+# Minimal actuator endpoints for monitoring
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+  endpoint:
+    health:
+      show-details: never
+    metrics:
+      enabled: true
+
+# JVM optimizations for ultra performance
+# Add these to your JVM startup parameters:
+# -XX:+UseG1GC
+# -XX:MaxGCPauseMillis=200
+# -XX:+UnlockExperimentalVMOptions
+# -XX:+UseZGC
+# -Xms4g
+# -Xmx8g
+# -XX:+UseStringDeduplication

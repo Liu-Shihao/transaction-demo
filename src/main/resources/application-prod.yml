@@ -1,0 +1,61 @@
+# Production environment configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# Logging configuration for production environment
+logging:
+  level:
+    com.banking.transaction: WARN
+    org.springframework.cache: ERROR
+    org.springframework.web: ERROR
+    root: ERROR
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# Production specific settings
+app:
+  transaction:
+    cache:
+      ttl: 600 # 10 minutes for production
+    debug:
+      enabled: false
+      show-sql: false
+
+# SpringDoc configuration for production environment
+springdoc:
+  swagger-ui:
+    enabled: false # Disable Swagger UI in production
+    path: /swagger-ui.html
+  api-docs:
+    enabled: false # Disable API docs in production
+
+# Actuator configuration for production environment
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: never
+    info:
+      enabled: true
+    prometheus:
+      enabled: true
+
+# Production-optimized Tomcat configuration for maximum QPS
+tomcat:
+  threads:
+    max: 1000         # Maximum number of worker threads
+    min-spare: 200    # Minimum number of worker threads
+  max-connections: 16384  # Maximum number of connections
+  accept-count: 200   # Maximum queue length for incoming connection requests
+  connection-timeout: 30000  # Connection timeout in milliseconds
+  keep-alive-timeout: 120000  # Keep-alive timeout in milliseconds
+  max-keep-alive-requests: 200  # Maximum number of HTTP requests per connection
+  # Performance optimizations
+  processor-cache: 200  # Processor cache size
+  tcp-no-delay: true   # Enable TCP_NODELAY
+  so-keep-alive: true  # Enable SO_KEEPALIVE 
