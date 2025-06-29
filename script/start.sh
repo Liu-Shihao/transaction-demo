@@ -56,4 +56,5 @@ echo "Spring profile: $PROFILE"
 echo "JVM parameters: $JAVA_OPTS"
 echo "Starting application..."
 
-java $JAVA_OPTS -jar target/transaction-demo-1.0.0.jar 
+# Start application with console output
+java $JAVA_OPTS -jar target/transaction-demo-1.0.0.jar 2>&1 
