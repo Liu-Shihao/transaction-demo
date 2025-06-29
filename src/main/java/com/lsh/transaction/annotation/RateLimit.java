@@ -1,4 +1,4 @@
-package com.banking.transaction.annotation;
+package com.lsh.transaction.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Repeatable;
@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-@Repeatable(RateLimits.class)
+@Repeatable(com.lsh.transaction.annotation.RateLimits.class)
 public @interface RateLimit {
     
     /**

@@ -1,4 +1,4 @@
-package com.banking.transaction.exception;
+package com.lsh.transaction.exception;
 
 /**
  * Exception thrown when attempting to create a resource that already exists.

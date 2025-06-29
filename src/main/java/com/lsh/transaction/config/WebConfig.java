@@ -1,6 +1,6 @@
-package com.banking.transaction.config;
+package com.lsh.transaction.config;
 
-import com.banking.transaction.interceptor.GlobalRateLimitInterceptor;
+import com.lsh.transaction.interceptor.GlobalRateLimitInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

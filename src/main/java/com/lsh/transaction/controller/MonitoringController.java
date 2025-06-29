@@ -1,7 +1,7 @@
-package com.banking.transaction.controller;
+package com.lsh.transaction.controller;
 
-import com.banking.transaction.limiter.MemoryRateLimiter;
-import com.banking.transaction.breaker.MemoryCircuitBreaker;
+import com.lsh.transaction.limiter.MemoryRateLimiter;
+import com.lsh.transaction.breaker.MemoryCircuitBreaker;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

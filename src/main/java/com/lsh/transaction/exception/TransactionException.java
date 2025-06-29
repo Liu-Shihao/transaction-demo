@@ -1,4 +1,4 @@
-package com.banking.transaction.exception;
+package com.lsh.transaction.exception;
 
 /**
  * Custom exception for transaction-related errors.

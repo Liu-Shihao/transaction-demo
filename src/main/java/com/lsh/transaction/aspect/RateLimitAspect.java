@@ -1,9 +1,9 @@
-package com.banking.transaction.aspect;
+package com.lsh.transaction.aspect;
 
-import com.banking.transaction.annotation.RateLimit;
-import com.banking.transaction.annotation.RateLimits;
-import com.banking.transaction.exception.RateLimitExceededException;
-import com.banking.transaction.limiter.MemoryRateLimiter;
+import com.lsh.transaction.annotation.RateLimit;
+import com.lsh.transaction.annotation.RateLimits;
+import com.lsh.transaction.exception.RateLimitExceededException;
+import com.lsh.transaction.limiter.MemoryRateLimiter;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;

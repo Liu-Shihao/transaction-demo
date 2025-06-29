@@ -1,11 +1,10 @@
-package com.banking.transaction.breaker;
+package com.lsh.transaction.breaker;
 
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * In-memory circuit breaker implementation

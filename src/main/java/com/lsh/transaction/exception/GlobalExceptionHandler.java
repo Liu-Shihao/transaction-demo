@@ -1,4 +1,4 @@
-package com.banking.transaction.exception;
+package com.lsh.transaction.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

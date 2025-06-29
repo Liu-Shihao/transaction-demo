@@ -1,8 +1,8 @@
-package com.banking.transaction.aspect;
+package com.lsh.transaction.aspect;
 
-import com.banking.transaction.annotation.CircuitBreaker;
-import com.banking.transaction.breaker.MemoryCircuitBreaker;
-import com.banking.transaction.exception.CircuitBreakerOpenException;
+import com.lsh.transaction.annotation.CircuitBreaker;
+import com.lsh.transaction.breaker.MemoryCircuitBreaker;
+import com.lsh.transaction.exception.CircuitBreakerOpenException;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;

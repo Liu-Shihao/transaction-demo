@@ -1,9 +1,9 @@
-package com.banking.transaction.controller;
+package com.lsh.transaction.controller;
 
-import com.banking.transaction.model.Transaction;
-import com.banking.transaction.model.TransactionRequest;
-import com.banking.transaction.model.PaginatedResponse;
-import com.banking.transaction.service.VirtualThreadTransactionService;
+import com.lsh.transaction.model.Transaction;
+import com.lsh.transaction.model.TransactionRequest;
+import com.lsh.transaction.model.PaginatedResponse;
+import com.lsh.transaction.service.VirtualThreadTransactionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;

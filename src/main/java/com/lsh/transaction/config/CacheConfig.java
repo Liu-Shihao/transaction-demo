@@ -1,4 +1,4 @@
-package com.banking.transaction.config;
+package com.lsh.transaction.config;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.cache.interceptor.SimpleKeyGenerator;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Enhanced cache configuration for the application.

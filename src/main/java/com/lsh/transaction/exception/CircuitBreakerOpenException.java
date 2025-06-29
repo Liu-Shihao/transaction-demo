@@ -1,4 +1,4 @@
-package com.banking.transaction.exception;
+package com.lsh.transaction.exception;
 
 /**
  * Exception thrown when circuit breaker is open

@@ -1,7 +1,7 @@
-package com.banking.transaction.interceptor;
+package com.lsh.transaction.interceptor;
 
-import com.banking.transaction.exception.RateLimitExceededException;
-import com.banking.transaction.limiter.MemoryRateLimiter;
+import com.lsh.transaction.exception.RateLimitExceededException;
+import com.lsh.transaction.limiter.MemoryRateLimiter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

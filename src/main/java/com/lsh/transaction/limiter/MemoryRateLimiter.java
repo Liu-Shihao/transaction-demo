@@ -1,4 +1,4 @@
-package com.banking.transaction.limiter;
+package com.lsh.transaction.limiter;
 
 import org.springframework.stereotype.Component;
 

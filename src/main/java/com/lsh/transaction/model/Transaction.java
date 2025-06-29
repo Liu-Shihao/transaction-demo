@@ -1,4 +1,4 @@
-package com.banking.transaction.model;
+package com.lsh.transaction.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.*;

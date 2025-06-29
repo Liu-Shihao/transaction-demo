@@ -1,4 +1,4 @@
-package com.banking.transaction.model;
+package com.lsh.transaction.model;
 
 import jakarta.validation.constraints.*;
 import java.math.BigDecimal;

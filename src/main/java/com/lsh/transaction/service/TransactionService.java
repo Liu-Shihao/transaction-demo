@@ -1,9 +1,9 @@
-package com.banking.transaction.service;
+package com.lsh.transaction.service;
 
-import com.banking.transaction.exception.ResourceNotFoundException;
-import com.banking.transaction.model.PaginatedResponse;
-import com.banking.transaction.model.Transaction;
-import com.banking.transaction.model.TransactionRequest;
+import com.lsh.transaction.exception.ResourceNotFoundException;
+import com.lsh.transaction.model.PaginatedResponse;
+import com.lsh.transaction.model.Transaction;
+import com.lsh.transaction.model.TransactionRequest;
 
 import java.util.UUID;
 

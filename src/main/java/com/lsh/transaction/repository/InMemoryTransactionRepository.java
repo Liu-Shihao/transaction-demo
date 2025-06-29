@@ -1,6 +1,6 @@
-package com.banking.transaction.repository;
+package com.lsh.transaction.repository;
 
-import com.banking.transaction.model.Transaction;
+import com.lsh.transaction.model.Transaction;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;

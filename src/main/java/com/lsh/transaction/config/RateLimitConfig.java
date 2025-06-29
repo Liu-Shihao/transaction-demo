@@ -1,6 +1,6 @@
-package com.banking.transaction.config;
+package com.lsh.transaction.config;
 
-import com.banking.transaction.limiter.MemoryRateLimiter;
+import com.lsh.transaction.limiter.MemoryRateLimiter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -1,11 +1,11 @@
-package com.banking.transaction.service;
+package com.lsh.transaction.service;
 
-import com.banking.transaction.exception.ResourceNotFoundException;
-import com.banking.transaction.exception.TransactionException;
-import com.banking.transaction.model.PaginatedResponse;
-import com.banking.transaction.model.Transaction;
-import com.banking.transaction.model.TransactionRequest;
-import com.banking.transaction.repository.TransactionRepository;
+import com.lsh.transaction.exception.ResourceNotFoundException;
+import com.lsh.transaction.exception.TransactionException;
+import com.lsh.transaction.model.PaginatedResponse;
+import com.lsh.transaction.model.Transaction;
+import com.lsh.transaction.model.TransactionRequest;
+import com.lsh.transaction.repository.TransactionRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

@@ -1,8 +1,8 @@
-package com.banking.transaction.service;
+package com.lsh.transaction.service;
 
-import com.banking.transaction.model.Transaction;
-import com.banking.transaction.model.TransactionRequest;
-import com.banking.transaction.model.PaginatedResponse;
+import com.lsh.transaction.model.Transaction;
+import com.lsh.transaction.model.TransactionRequest;
+import com.lsh.transaction.model.PaginatedResponse;
 
 import java.util.List;
 import java.util.UUID;
