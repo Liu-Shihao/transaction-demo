@@ -1,3 +1,5 @@
 /.idea/
 /jmeter/jmeter.log
 /target/
+/.DS_Store
+/jmeter/.DS_Store
