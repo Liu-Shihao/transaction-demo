@@ -132,11 +132,6 @@ helm install transaction-demo ./helm/transaction-demo
 | **按类型查询** | 10000/min API | 统计分析，宽松限制 |
 | **获取统计信息** | 10000/min API | 监控查询，宽松限制 |
 
-#### 监控端点 (Monitoring)
-| API | 限流配置 | 说明 |
-|-----|----------|------|
-| **健康检查** | 无限制 | 监控需要，不设限流 |
-| **缓存统计** | 无限制 | 监控需要，不设限流 |
 
 ### 配置原则
 
@@ -166,49 +161,9 @@ helm install transaction-demo ./helm/transaction-demo
 
 ### 测试环境配置
 
-#### Tomcat线程池配置
-```yaml
-# 高性能Tomcat配置 (application-stress.yml)
-server:
-  tomcat:
-    threads:
-      max: 1500         # 最大工作线程数
-      min-spare: 800    # 最小空闲线程数
-    max-connections: 50000  # 最大连接数
-    accept-count: 2000   # 连接队列长度
-    connection-timeout: 30000  # 连接超时时间
-    keep-alive-timeout: 120000  # Keep-alive超时时间
-    max-keep-alive-requests: 200  # 每个连接最大请求数
-    # 性能优化参数
-    processor-cache: 800  # 处理器缓存大小
-    tcp-no-delay: true   # 启用TCP_NODELAY
-    so-keep-alive: true  # 启用SO_KEEPALIVE
-```
-
-#### JMeter测试配置
-```xml
-<!-- JMeter线程组配置 -->
-<ThreadGroup>
-  <stringProp name="ThreadGroup.num_threads">3000</stringProp>  <!-- 并发线程数 -->
-  <stringProp name="ThreadGroup.ramp_time">60</stringProp>      <!-- 线程启动时间(秒) -->
-  <stringProp name="LoopController.loops">50</stringProp>       <!-- 循环次数 -->
-  <!-- 总请求数 = 3000线程 × 50循环 = 150,000请求 -->
-</ThreadGroup>
-```
-
-#### JVM优化配置
-```bash
-# 高并发环境JVM参数 (script/jvm-options.conf)
-STRESS_JVM_OPTS="\
-  -Xms4g -Xmx4g \
-  -XX:+UseG1GC \
-  -XX:MaxGCPauseMillis=200 \
-  -XX:MaxRAMPercentage=75.0 \
-  -XX:+UseStringDeduplication \
-  -XX:+OptimizeStringConcat \
-  -XX:+TieredCompilation \
-  -Dspring.main.lazy-initialization=true"
-```
+- tomcat thread max: 1500 
+- jvm heap size: 4GB
+- JMeter Thread Group: 3000 threads × 50 loops = 150,000 requests
 
 ### 性能测试结果对比
 
